@@ -4,7 +4,7 @@ import "./App.css";
 import Home from "./components/Home";
 import { DataProvider } from "./context/DataContext";
 import Footer from "./components/Footer";
-import BlogDetails from "./components/blogDetails";
+import BlogDetails from "./components/BlogDetails";
 import CategoryBlogsDetailsTrending from "./components/CategoryBlogsDetailsTrending";
 import CategoryBlogsDetailsPopular from "./components/CategoryDeatailsPopular";
 import CategoryBlogsDetailsNewewst from "./components/CategoryDetailsNewest";
