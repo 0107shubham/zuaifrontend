@@ -21,24 +21,31 @@ const Admin = () => {
   const [editItem, setEditItem] = useState(null);
 
   const handleDelete = async (id) => {
+    const previousData = data; // Keep a reference to the previous state
+    setData((prevData) => prevData.filter((item) => item.id !== id));
+
     try {
       await axios.delete(`https://zuaibackend.vercel.app/posts/${id}`);
-      setData((prevData) => prevData.filter((item) => item.id !== id));
       toast.success("Blog deleted successfully");
     } catch (err) {
+      setData(previousData); // Revert state on failure
       toast.error("Error deleting blog");
     }
   };
 
   const handleEdit = async () => {
+    console.log("update before", data);
+
     try {
       await axios.put(
         `https://zuaibackend.vercel.app/posts/${editItem.id}`,
         editItem
       );
+      console.log("update after", data);
       setData((prevData) =>
         prevData.map((item) => (item.id === editItem.id ? editItem : item))
       );
+
       toast.success("Blog updated successfully");
       setEditItem(null); // Close the edit dialog
     } catch (err) {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FaPlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -14,8 +14,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import axios from "axios";
+import { DataContext } from "@/context/DataContext"; // Import your DataContext
 
 const AdminNavbar = () => {
+  const { setData, data } = useContext(DataContext); // Use DataContext
   const [formData, setFormData] = useState({
     imageUrl: "",
     authorName: "",
@@ -40,6 +42,11 @@ const AdminNavbar = () => {
         formData
       );
       console.log("Blog created successfully:", response.data);
+
+      // Update the blog list after successful creation
+      setData([response.data, ...data]);
+
+      // Reset the form
       setFormData({
         imageUrl: "",
         authorName: "",

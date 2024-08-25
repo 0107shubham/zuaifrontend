@@ -22,12 +22,12 @@ const Content = () => {
     data && data.filter((item) => item.category === "newest").slice(0, 3);
 
   return (
-    <div className="flex flex-col gap-5 ">
-      <div className="shadow-xl">
-        <h1 className="text-[32px] font-bold py-4">Trending Now</h1>
-        <ul className="flex justify-start gap-4 w-full ">
+    <div className="flex flex-col gap-5 bg-slate-100 my-4 ">
+      <div className="shadow-xl bg-white w-full">
+        <h1 className="text-[32px] font-bold py-4 ">Trending Now</h1>
+        <ul className="flex justify-start gap-4  w-full">
           {trendingItems.map((item) => (
-            <li className="shadow-md p-3 rounded-lg" key={item.id}>
+            <li className="shadow-md p-3 rounded-lg w-[400px] " key={item.id}>
               <div className="flex items-center gap-4">
                 <img src={item.authorUrl} className="w-[40px] rounded-full" />
                 <p className="text-[18px] text-gray-600 font-medium">
@@ -56,7 +56,7 @@ const Content = () => {
               </div>
             </li>
           ))}
-          <div className=" w-[10vw] cursor-pointer flex justify-center items-center text-gray-500 hover:text-gray-800 hover:scale-110">
+          <div className=" w-[100px] cursor-pointer flex justify-center items-center text-gray-500 hover:text-gray-800 hover:scale-110">
             <Link to="/categoryTrending" className="flex flex-col ">
               <FaArrowRight className="text-[35px] " />
               <p className="text-[20px] text-[#6e3639] font-semibold">More</p>
@@ -64,11 +64,11 @@ const Content = () => {
           </div>
         </ul>
       </div>
-      <div className="shadow-xl">
+      <div className="shadow-xl bg-white w-full">
         <h1 className="text-[32px] font-bold py-4">Popular</h1>
         <ul className="flex justify-start gap-4 w-full ">
           {popularItems.map((item) => (
-            <li className="shadow-md p-3 rounded-lg" key={item.id}>
+            <li className="shadow-md p-3 rounded-lg  w-[400px] " key={item.id}>
               <div className="flex items-center gap-4">
                 <img src={item.authorUrl} className="w-[40px] rounded-full" />
                 <p className="text-[18px] text-gray-600 font-medium">
@@ -97,7 +97,7 @@ const Content = () => {
               </div>
             </li>
           ))}
-          <div className=" w-[10vw] cursor-pointer flex justify-center items-center text-gray-500 hover:text-gray-800 hover:scale-110">
+          <div className=" w-[100px]  cursor-pointer flex justify-center items-center text-gray-500 hover:text-gray-800 hover:scale-110">
             <Link to="/categoryPopular" className="flex flex-col ">
               <FaArrowRight className="text-[35px] " />
               <p className="text-[20px] text-[#6e3639] font-semibold">More</p>
@@ -105,11 +105,11 @@ const Content = () => {
           </div>
         </ul>
       </div>
-      <div className="shadow-xl">
+      <div className="shadow-xl bg-white">
         <h1 className="text-[32px] font-bold py-4">Newest</h1>
-        <ul className="flex justify-start gap-4 w-full ">
+        <ul className="flex justify-start gap-4  w-full">
           {newestItems.map((item) => (
-            <li className="shadow-md p-3 rounded-lg" key={item.id}>
+            <li className="shadow-md p-3 rounded-lg  w-[400px] " key={item.id}>
               <div className="flex items-center gap-4">
                 <img src={item.authorUrl} className="w-[40px] rounded-full" />
                 <p className="text-[18px] text-gray-600 font-medium">
@@ -138,7 +138,7 @@ const Content = () => {
               </div>
             </li>
           ))}
-          <div className=" w-[10vw] cursor-pointer flex justify-center items-center text-gray-500 hover:text-gray-800 hover:scale-110">
+          <div className=" w-[100px]  cursor-pointer flex justify-center items-center text-gray-500 hover:text-gray-800 hover:scale-110">
             <Link to="/categoryNewest" className="flex flex-col ">
               <FaArrowRight className="text-[35px] " />
               <p className="text-[20px] text-[#6e3639] font-semibold">More</p>
